@@ -18,6 +18,7 @@
 
  created 25 Nov 2012 by Tom Igoe
  modified 6th July 2018 to run on ESP-WROOM-32 by Matthew Taylor
+ confirmed working w GPIO pin 2 lighting external led and onboard led.
 
  https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/
  
@@ -31,11 +32,13 @@ int keyIndex = 0;                 // your network key Index number (needed only 
 
 int status = WL_IDLE_STATUS;
 int PIN_NUMBER = 2;
+int PIN_NUMBER2 = 4;
 WiFiServer server(80);
 
 void setup() {
   Serial.begin(115200);      // initialize serial communication
   pinMode(PIN_NUMBER, OUTPUT);      // set the LED pin mode
+  pinMode(PIN_NUMBER2, OUTPUT);      // set the LED pin mode
 
 
   // attempt to connect to Wifi network:
@@ -75,8 +78,10 @@ void loop() {
             client.println();
 
             // the content of the HTTP response follows the header:
-            client.print("Click <a href=\"/H\">here</a> turn the LED on pin on<br>");
-            client.print("Click <a href=\"/L\">here</a> turn the LED on pin off<br>");
+            client.print("Click <a href=\"/L\">here</a> turn the LED on pin1 off<br>");
+            client.print("Click <a href=\"/H\">here</a> turn the LED on pin1 on<br>");            
+            client.print("Click <a href=\"/2L\">here</a> turn the LED on pin2 off<br>");
+            client.print("Click <a href=\"/2H\">here</a> turn the LED on pin2 on<br>");
 
             // The HTTP response ends with another blank line:
             client.println();
@@ -96,7 +101,18 @@ void loop() {
         }
         if (currentLine.endsWith("GET /L")) {
           digitalWrite(PIN_NUMBER, LOW);                // GET /L turns the LED off
-          Serial.println("GET /L, pin set to LOW");        }
+          Serial.println("GET /L, pin set to LOW");
+        }
+        // Check to see if the client request was "GET /H" or "GET /L":
+        if (currentLine.endsWith("GET /2H")) {
+          digitalWrite(PIN_NUMBER2, HIGH);               // GET /H turns the LED on
+          Serial.println("GET /2H, pin2 set to HIGH");
+        }
+        if (currentLine.endsWith("GET /2L")) {
+          digitalWrite(PIN_NUMBER2, LOW);                // GET /L turns the LED off
+          Serial.println("GET /2L, pin2 set to LOW");
+        }
+
       }
     }
     // close the connection:
