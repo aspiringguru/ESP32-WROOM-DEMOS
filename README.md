@@ -108,3 +108,4 @@ now load sketch and test serial port connection.
 some sketches will require external libraries.
 
 arduino > menu > sketch > include library > manage libraries > search for name of library to be downloaded.
+s
