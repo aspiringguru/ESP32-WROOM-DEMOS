@@ -67,6 +67,7 @@ class MyCallbacks: public BLECharacteristicCallbacks {
 
 void setup() {
   Serial.begin(115200);
+  Serial.println("ESP32_smartphone_thunkable_app_demo started.");
 
   // Create the BLE Device
   BLEDevice::init("UART Service");

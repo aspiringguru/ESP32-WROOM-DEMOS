@@ -1,0 +1,6 @@
+http://esp-idf.readthedocs.io/en/latest/get-started/windows-setup.html
+548MB download.
+https://dl.espressif.com/dl/esp32_win32_msys2_environment_and_toolchain-20180110.zip
+
+
+http://esp-idf.readthedocs.io/en/latest/get-started/index.html#get-started-get-esp-idf
