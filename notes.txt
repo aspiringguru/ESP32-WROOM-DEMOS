@@ -4,3 +4,31 @@ https://dl.espressif.com/dl/esp32_win32_msys2_environment_and_toolchain-20180110
 
 
 http://esp-idf.readthedocs.io/en/latest/get-started/index.html#get-started-get-esp-idf
+
+
+
+stuff to do
+
+https://randomnerdtutorials.com/esp32-mqtt-publish-subscribe-arduino-ide/
+https://randomnerdtutorials.com/getting-started-with-raspberry-pi/
+http://randomnerdtutorials.com/installing-raspbian-lite-enabling-and-connecting-with-ssh/
+
+
+
+
+http://randomnerdtutorials.com/home-automation-using-esp8266/
+
+https://randomnerdtutorials.com/esp8266-and-node-red-with-mqtt/
+
+
+
+
+cheap dslr astro photography
+https://www.youtube.com/watch?v=Bz0sBkp2kso
+
+
+https://howtomechatronics.com/tutorials/arduino/arduino-sd-card-data-logging-excel-tutorial/
+
+
+arduino connect to mqtt server on local network
+https://github.com/Protoneer/MQTT-ESP8266-CLOUDMQTT.COM/blob/master/example.ino
